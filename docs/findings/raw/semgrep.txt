@@ -1,0 +1,18 @@
+                   
+                   
+┌─────────────────┐
+│ 2 Code Findings │
+└─────────────────┘
+                                               
+  [36m[22m[24m  .github/workflows/style.yaml[0m
+    ❯❱ [1myaml.github-actions.security.github-actions-mutable-action-tag.github-actions-mutable-action-tag[0m
+          [31m[1m[24m❰❰ Blocking ❱❱[0m
+          GitHub Actions step uses a mutable tag or branch reference. Tags and branch names can be silently   
+          repointed by the action owner, enabling supply-chain attacks — as seen in the trivy-action and kics-
+          github-action compromises. Pin the reference to a full 40-character commit SHA instead, e.g. `uses: 
+          actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608`.                                         
+          Details: https://sg.run/2LgAL                                                                       
+                                                                                                              
+           19┆ uses: actions/checkout@v4
+            ⋮┆----------------------------------------
+           22┆ uses: actions/setup-python@v5

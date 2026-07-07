@@ -1,0 +1,1001 @@
+{
+  "SchemaVersion": 2,
+  "Trivy": {
+    "Version": "0.69.3"
+  },
+  "ReportID": "019f3e00-65be-7d26-af8b-9f6e3e6242f1",
+  "CreatedAt": "2026-07-08T00:44:01.27886335+05:30",
+  "ArtifactID": "sha256:6c846d7397bdffbaf460fca9cd4b9ace0d0c1acfc012ec7ac142a9c2e9dcbb5f",
+  "ArtifactName": ".",
+  "ArtifactType": "repository",
+  "Metadata": {
+    "RepoURL": "git@github.com:mayanksekhar/fastapi-realworld-backend.git",
+    "Branch": "master",
+    "Commit": "55111c6b335455734c139a2245d98be8288be528",
+    "CommitMsg": "Add API tests for validation, permissions, article filters, and edge cases",
+    "Author": "Borys Oliinyk \u003coleynik.boris@gmail.com\u003e",
+    "Committer": "Borys Oliinyk \u003coleynik.boris@gmail.com\u003e"
+  },
+  "Results": [
+    {
+      "Target": "requirements.txt",
+      "Class": "lang-pkgs",
+      "Type": "pip",
+      "Packages": [
+        {
+          "Name": "SQLAlchemy",
+          "Identifier": {
+            "PURL": "pkg:pypi/sqlalchemy@2.0.46",
+            "UID": "1814e069b0217671"
+          },
+          "Version": "2.0.46",
+          "Locations": [
+            {
+              "StartLine": 16,
+              "EndLine": 16
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "SQLAlchemy-Utils",
+          "Identifier": {
+            "PURL": "pkg:pypi/sqlalchemy-utils@0.41.2",
+            "UID": "b5cb3ede4b71cb6b"
+          },
+          "Version": "0.41.2",
+          "Locations": [
+            {
+              "StartLine": 17,
+              "EndLine": 17
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "alembic",
+          "Identifier": {
+            "PURL": "pkg:pypi/alembic@1.18.1",
+            "UID": "1dc4f8d596d5a886"
+          },
+          "Version": "1.18.1",
+          "Locations": [
+            {
+              "StartLine": 1,
+              "EndLine": 1
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "asyncpg",
+          "Identifier": {
+            "PURL": "pkg:pypi/asyncpg@0.31.0",
+            "UID": "c5d82a05369a825b"
+          },
+          "Version": "0.31.0",
+          "Locations": [
+            {
+              "StartLine": 2,
+              "EndLine": 2
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "bcrypt",
+          "Identifier": {
+            "PURL": "pkg:pypi/bcrypt@4.3.0",
+            "UID": "683612af707bb666"
+          },
+          "Version": "4.3.0",
+          "Locations": [
+            {
+              "StartLine": 3,
+              "EndLine": 3
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "fastapi",
+          "Identifier": {
+            "PURL": "pkg:pypi/fastapi@0.128.0",
+            "UID": "8a3b72d51010aa52"
+          },
+          "Version": "0.128.0",
+          "Locations": [
+            {
+              "StartLine": 4,
+              "EndLine": 4
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "greenlet",
+          "Identifier": {
+            "PURL": "pkg:pypi/greenlet@3.3.1",
+            "UID": "b4161123c8e90363"
+          },
+          "Version": "3.3.1",
+          "Locations": [
+            {
+              "StartLine": 5,
+              "EndLine": 5
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "httpx",
+          "Identifier": {
+            "PURL": "pkg:pypi/httpx@0.27.2",
+            "UID": "4994d34453c9cf00"
+          },
+          "Version": "0.27.2",
+          "Locations": [
+            {
+              "StartLine": 6,
+              "EndLine": 6
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "passlib",
+          "Identifier": {
+            "PURL": "pkg:pypi/passlib@1.7.4",
+            "UID": "664d92294eb9b16b"
+          },
+          "Version": "1.7.4",
+          "Locations": [
+            {
+              "StartLine": 7,
+              "EndLine": 7
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "psycopg2-binary",
+          "Identifier": {
+            "PURL": "pkg:pypi/psycopg2-binary@2.9.11",
+            "UID": "9c17b7320a2438ba"
+          },
+          "Version": "2.9.11",
+          "Locations": [
+            {
+              "StartLine": 8,
+              "EndLine": 8
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "pydantic",
+          "Identifier": {
+            "PURL": "pkg:pypi/pydantic@2.12.5",
+            "UID": "a203084dc897a84d"
+          },
+          "Version": "2.12.5",
+          "Locations": [
+            {
+              "StartLine": 10,
+              "EndLine": 10
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "pydantic-settings",
+          "Identifier": {
+            "PURL": "pkg:pypi/pydantic-settings@2.12.0",
+            "UID": "3c4feb7d214a80d7"
+          },
+          "Version": "2.12.0",
+          "Locations": [
+            {
+              "StartLine": 9,
+              "EndLine": 9
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "pyjwt",
+          "Identifier": {
+            "PURL": "pkg:pypi/pyjwt@2.10.1",
+            "UID": "5cd68cc6a32ec6bd"
+          },
+          "Version": "2.10.1",
+          "Locations": [
+            {
+              "StartLine": 11,
+              "EndLine": 11
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "pytest",
+          "Identifier": {
+            "PURL": "pkg:pypi/pytest@9.0.2",
+            "UID": "39d1cb0a4fd80af7"
+          },
+          "Version": "9.0.2",
+          "Locations": [
+            {
+              "StartLine": 12,
+              "EndLine": 12
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "pytest-asyncio",
+          "Identifier": {
+            "PURL": "pkg:pypi/pytest-asyncio@1.3.0",
+            "UID": "d3f7abe53c17a0a3"
+          },
+          "Version": "1.3.0",
+          "Locations": [
+            {
+              "StartLine": 13,
+              "EndLine": 13
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "pytest-cov",
+          "Identifier": {
+            "PURL": "pkg:pypi/pytest-cov@7.0.0",
+            "UID": "46687e3a2952aae8"
+          },
+          "Version": "7.0.0",
+          "Locations": [
+            {
+              "StartLine": 14,
+              "EndLine": 14
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "python-slugify",
+          "Identifier": {
+            "PURL": "pkg:pypi/python-slugify@8.0.4",
+            "UID": "158407732adcfcb3"
+          },
+          "Version": "8.0.4",
+          "Locations": [
+            {
+              "StartLine": 15,
+              "EndLine": 15
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "starlette",
+          "Identifier": {
+            "PURL": "pkg:pypi/starlette@0.50.0",
+            "UID": "7031ffd146ce68d8"
+          },
+          "Version": "0.50.0",
+          "Locations": [
+            {
+              "StartLine": 18,
+              "EndLine": 18
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "structlog",
+          "Identifier": {
+            "PURL": "pkg:pypi/structlog@25.5.0",
+            "UID": "33b9cf8bd74894eb"
+          },
+          "Version": "25.5.0",
+          "Locations": [
+            {
+              "StartLine": 19,
+              "EndLine": 19
+            }
+          ],
+          "AnalyzedBy": "pip"
+        },
+        {
+          "Name": "uvicorn",
+          "Identifier": {
+            "PURL": "pkg:pypi/uvicorn@0.40.0",
+            "UID": "6f1768d3a9ca7ced"
+          },
+          "Version": "0.40.0",
+          "Locations": [
+            {
+              "StartLine": 20,
+              "EndLine": 20
+            }
+          ],
+          "AnalyzedBy": "pip"
+        }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "GHSA-4xgf-cpjx-pc3j",
+          "PkgName": "pydantic-settings",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pydantic-settings@2.12.0",
+            "UID": "3c4feb7d214a80d7"
+          },
+          "InstalledVersion": "2.12.0",
+          "FixedVersion": "2.14.2",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://github.com/advisories/GHSA-4xgf-cpjx-pc3j",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:c86b4660d6c176ca5efd48fba8fcf660d8f1da7c3b99984ab9f42e820eddeb8d",
+          "Title": "pydantic-settings: NestedSecretsSettingsSource follows symlinks outside secrets_dir, enabling local file read and bypassing secrets_dir_max_size",
+          "Description": "### Summary\n\n`NestedSecretsSettingsSource` reads secret values from files in a configured `secrets_dir`. When `secrets_nested_subdir=True`, a directory entry inside `secrets_dir` that is a symbolic link pointing **outside** `secrets_dir` is followed, so files outside the configured directory are read into settings values. The same code path bypasses the documented `secrets_dir_max_size` protection. An attacker or lower-privileged component able to influence entries in the configured secrets directory (for example, a writable or shared secrets mount) can turn this into an unintended local file read into settings and can defeat the advertised loading-size cap. This report does not claim network reachability by itself.\n\n### Details\n\n`NestedSecretsSettingsSource` performed two passes over `secrets_dir` using two different, inconsistent directory-traversal implementations:\n\n* The size check in `validate_secrets_path()` used `Path.glob('**/*')`, which does **not** descend into a symbolically-linked directory.\n* The loader in `load_secrets()` used `glob.iglob(f'{path}/**/*', recursive=True)` followed by `read_text()`, which **does** follow symlinked directories and reads through the link target.\n\nBecause the two passes disagreed on symlinks, a symlinked directory inside `secrets_dir` whose target lives elsewhere was invisible to the size accounting (counted as 0 bytes) while still being fully read by the loader. This produces two distinct problems:\n\n1. **Out-of-tree read (CWE-22 / CWE-59).** A symlinked directory (or file) inside `secrets_dir` that resolves outside it is followed, and the external file's contents are loaded into the corresponding settings field.\n2. **`secrets_dir_max_size` bypass (CWE-400).** The size check never sees the out-of-tree content, so the documented size cap is neither respected nor able to reject the oversized external file. A related amplification exists for cyclic in-tree symlinks, which `glob.iglob(recursive=True)` re-traverses, inflating the size accounting and the number of loaded secrets.\n\n#### Reproduction\n\nIn a clean Linux container, with a `secrets_dir` containing a symlink `secrets/db -\u003e /path/outside` and an `outside/passwd` file of 512 bytes, while `secrets_dir_max_size=100`:\n\n```python\nfrom pydantic import BaseModel\nfrom pydantic_settings import (\n    BaseSettings,\n    SettingsConfigDict,\n    NestedSecretsSettingsSource,\n)\n\n\nclass Db(BaseModel):\n    passwd: str | None = None\n\n\nclass Settings(BaseSettings):\n    model_config = SettingsConfigDict(\n        secrets_dir='secrets',\n        secrets_nested_subdir=True,\n        secrets_dir_max_size=100,  # outside/passwd is 512 bytes\n    )\n    db: Db = Db()\n\n    @classmethod\n    def settings_customise_sources(\n        cls, settings_cls, init_settings, env_settings, dotenv_settings, file_secret_settings\n    ):\n        return (NestedSecretsSettingsSource(file_secret_settings),)\n```\n\nOn affected versions, `Settings().db.passwd` is populated with the 512-byte out-of-tree file and **no** `SettingsError` is raised, even though the file exceeds `secrets_dir_max_size`.\n\n### Impact\n\nApplications that opt into `NestedSecretsSettingsSource` with `secrets_nested_subdir=True` and load secrets from a directory whose entries can be influenced by an attacker or a lower-privileged component (for example, a writable or shared secrets mount, or a secrets directory partially populated from untrusted input) are affected. The impact is:\n\n* **Confidentiality:** files outside the configured `secrets_dir` can be read into settings values (local file read).\n* **Integrity / availability of the safeguard:** the advertised `secrets_dir_max_size` cap can be bypassed, and cyclic symlinks can inflate resource usage during loading.\n\nThe vulnerability requires the ability to place a symbolic link inside the configured secrets directory; it is not remotely reachable on its own. Applications that do not use `NestedSecretsSettingsSource`, or that point `secrets_dir` at a directory fully under the application's control, are not affected.\n\n### Mitigation\n\nUpgrade to **pydantic-settings 2.14.2**, which:\n\n* walks the secrets directory explicitly and only descends into directories whose resolved path stays within `secrets_dir`, so symlinked directories pointing outside are never followed;\n* uses a single, cycle-safe iterator for both the size check and the loader, so the size accounting and the loaded set are always consistent and each real directory is visited at most once;\n* skips any file whose resolved path escapes `secrets_dir`, as defense in depth.\n\nIf upgrading is not immediately possible, ensure the configured `secrets_dir` is fully owned and controlled by the application (no writable or attacker-influenced entries), or avoid `secrets_nested_subdir=True`.",
+          "Severity": "MEDIUM",
+          "VendorSeverity": {
+            "ghsa": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://github.com/pydantic/pydantic-settings",
+            "https://github.com/pydantic/pydantic-settings/security/advisories/GHSA-4xgf-cpjx-pc3j"
+          ],
+          "PublishedDate": "2026-06-19T22:10:42Z",
+          "LastModifiedDate": "2026-06-19T22:10:42Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-32597",
+          "VendorIDs": [
+            "GHSA-752w-5fwx-jx9f"
+          ],
+          "PkgName": "pyjwt",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pyjwt@2.10.1",
+            "UID": "5cd68cc6a32ec6bd"
+          },
+          "InstalledVersion": "2.10.1",
+          "FixedVersion": "2.12.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-32597",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:bd806a66be22aee35f53b626ed55ec85a165f481f7e33e30521925f82e23d5bf",
+          "Title": "pyjwt: PyJWT accepts unknown `crit` header extensions (RFC 7515 §4.1.11 MUST violation)",
+          "Description": "PyJWT is a JSON Web Token implementation in Python. Prior to 2.12.0, PyJWT does not validate the crit (Critical) Header Parameter defined in RFC 7515 §4.1.11. When a JWS token contains a crit array listing extensions that PyJWT does not understand, the library accepts the token instead of rejecting it. This violates the MUST requirement in the RFC. This vulnerability is fixed in 2.12.0.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-345",
+            "CWE-863",
+            "CWE-347"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 2,
+            "ghsa": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:10140",
+            "https://access.redhat.com/errata/RHSA-2026:10141",
+            "https://access.redhat.com/errata/RHSA-2026:10184",
+            "https://access.redhat.com/errata/RHSA-2026:12176",
+            "https://access.redhat.com/errata/RHSA-2026:13508",
+            "https://access.redhat.com/errata/RHSA-2026:13512",
+            "https://access.redhat.com/errata/RHSA-2026:13545",
+            "https://access.redhat.com/errata/RHSA-2026:13553",
+            "https://access.redhat.com/errata/RHSA-2026:13672",
+            "https://access.redhat.com/errata/RHSA-2026:13916",
+            "https://access.redhat.com/errata/RHSA-2026:17083",
+            "https://access.redhat.com/errata/RHSA-2026:19138",
+            "https://access.redhat.com/errata/RHSA-2026:19355",
+            "https://access.redhat.com/errata/RHSA-2026:19375",
+            "https://access.redhat.com/errata/RHSA-2026:19712",
+            "https://access.redhat.com/errata/RHSA-2026:21431",
+            "https://access.redhat.com/errata/RHSA-2026:21517",
+            "https://access.redhat.com/errata/RHSA-2026:22330",
+            "https://access.redhat.com/errata/RHSA-2026:24977",
+            "https://access.redhat.com/errata/RHSA-2026:26226",
+            "https://access.redhat.com/errata/RHSA-2026:6568",
+            "https://access.redhat.com/errata/RHSA-2026:6720",
+            "https://access.redhat.com/errata/RHSA-2026:6912",
+            "https://access.redhat.com/errata/RHSA-2026:6926",
+            "https://access.redhat.com/errata/RHSA-2026:8437",
+            "https://access.redhat.com/errata/RHSA-2026:8746",
+            "https://access.redhat.com/errata/RHSA-2026:8747",
+            "https://access.redhat.com/errata/RHSA-2026:8748",
+            "https://access.redhat.com/security/cve/CVE-2026-32597",
+            "https://bugzilla.redhat.com/2438762",
+            "https://bugzilla.redhat.com/2447194",
+            "https://bugzilla.redhat.com/2448553",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2438762",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2447194",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2448553",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-26007",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-30922",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-32597",
+            "https://errata.almalinux.org/8/ALSA-2026-12176.html",
+            "https://errata.rockylinux.org/RLSA-2026:12176",
+            "https://github.com/jpadilla/pyjwt",
+            "https://github.com/jpadilla/pyjwt/security/advisories/GHSA-752w-5fwx-jx9f",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pyjwt/PYSEC-2026-120.yaml",
+            "https://linux.oracle.com/cve/CVE-2026-32597.html",
+            "https://linux.oracle.com/errata/ELSA-2026-19355.html",
+            "https://lists.debian.org/debian-lts-announce/2026/05/msg00008.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-32597",
+            "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-32597.json",
+            "https://ubuntu.com/security/notices/USN-8133-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-32597"
+          ],
+          "PublishedDate": "2026-03-13T19:55:09.5Z",
+          "LastModifiedDate": "2026-07-01T13:17:03.58Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-48526",
+          "VendorIDs": [
+            "GHSA-xgmm-8j9v-c9wx"
+          ],
+          "PkgName": "pyjwt",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pyjwt@2.10.1",
+            "UID": "5cd68cc6a32ec6bd"
+          },
+          "InstalledVersion": "2.10.1",
+          "FixedVersion": "2.13.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-48526",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:d0e432c8ef1db76a16dbcbf2259735ca30df764be6d2db94e2be7cd013d97766",
+          "Title": "python-pyjwt: PyJWT: Authentication bypass due to forged JSON Web Tokens",
+          "Description": "PyJWT is a JSON Web Token implementation in Python. Prior to 2.13.0, when the verifier is decoding JSON Web Tokens, while supporting both asymmetric and HMAC algorithms, the library does not validate use of JSON Web Keys in HMAC algorithm, allowing attacker to use the issuer public key as the secret key for HMAC algorithm. This vulnerability is fixed in 2.13.0.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-287",
+            "CWE-347"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "ghsa": 3,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:25902",
+            "https://access.redhat.com/errata/RHSA-2026:25928",
+            "https://access.redhat.com/errata/RHSA-2026:26206",
+            "https://access.redhat.com/errata/RHSA-2026:28571",
+            "https://access.redhat.com/errata/RHSA-2026:30076",
+            "https://access.redhat.com/errata/RHSA-2026:30088",
+            "https://access.redhat.com/errata/RHSA-2026:30089",
+            "https://access.redhat.com/errata/RHSA-2026:33683",
+            "https://access.redhat.com/errata/RHSA-2026:34160",
+            "https://access.redhat.com/errata/RHSA-2026:34365",
+            "https://access.redhat.com/errata/RHSA-2026:34374",
+            "https://access.redhat.com/errata/RHSA-2026:35835",
+            "https://access.redhat.com/errata/RHSA-2026:35836",
+            "https://access.redhat.com/errata/RHSA-2026:35837",
+            "https://access.redhat.com/errata/RHSA-2026:35845",
+            "https://access.redhat.com/security/cve/CVE-2026-48526",
+            "https://bugzilla.redhat.com/2482734",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2482734",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-48526",
+            "https://errata.almalinux.org/9/ALSA-2026-26206.html",
+            "https://errata.rockylinux.org/RLSA-2026:25902",
+            "https://github.com/jpadilla/pyjwt",
+            "https://github.com/jpadilla/pyjwt/security/advisories/GHSA-xgmm-8j9v-c9wx",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pyjwt/PYSEC-2026-179.yaml",
+            "https://linux.oracle.com/cve/CVE-2026-48526.html",
+            "https://linux.oracle.com/errata/ELSA-2026-26206.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-48526",
+            "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-48526.json",
+            "https://www.cve.org/CVERecord?id=CVE-2026-48526"
+          ],
+          "PublishedDate": "2026-05-28T16:16:29.657Z",
+          "LastModifiedDate": "2026-07-06T13:17:01.95Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-48522",
+          "VendorIDs": [
+            "GHSA-993g-76c3-p5m4"
+          ],
+          "PkgName": "pyjwt",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pyjwt@2.10.1",
+            "UID": "5cd68cc6a32ec6bd"
+          },
+          "InstalledVersion": "2.10.1",
+          "FixedVersion": "2.13.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-48522",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:daa091cc904d629ce1805a77f7fcc317cc32f8abd38e92851409f299ce6e851b",
+          "Title": "python-pyjwt: PyJWT: Server-Side Request Forgery (SSRF) via uncontrolled URL fetching in PyJWKClient",
+          "Description": "PyJWT is a JSON Web Token implementation in Python. Prior to 2.13.0, PyJWKClient passes its uri argument directly to urllib.request.urlopen() which uses Python stdlib's default OpenerDirector registering HTTPHandler, HTTPSHandler, FTPHandler, FileHandler, and DataHandler. There is currently no documented option to restrict which schemes PyJWKClient will fetch. If an application's jku URL ingestion path accepts attacker-influenced URLs (e.g., from JWT header, configuration file, OAuth flow parameter), the attacker can cause PyJWKClient to read arbitrary local files via file:// (SSRF on local filesystem), cause PyJWKClient to attempt FTP / data-URI fetches (broader SSRF surface), or forge tokens that PyJWT verifies as valid. The library does not directly return non-HTTP(S) URI contents to the attacker; the chained \"plant a JWKS to forge tokens\" scenario described in the original report requires additional application-layer flaws (attacker write access to a filesystem path, untrusted jku derivation) that this fix does not address. This vulnerability is fixed in 2.13.0.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-441",
+            "CWE-918"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N",
+              "V3Score": 4.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N",
+              "V3Score": 4.2
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-48522",
+            "https://github.com/jpadilla/pyjwt",
+            "https://github.com/jpadilla/pyjwt/security/advisories/GHSA-993g-76c3-p5m4",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pyjwt/PYSEC-2026-175.yaml",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-48522",
+            "https://www.cve.org/CVERecord?id=CVE-2026-48522"
+          ],
+          "PublishedDate": "2026-05-28T16:16:29.15Z",
+          "LastModifiedDate": "2026-06-17T10:55:03.53Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-48523",
+          "VendorIDs": [
+            "GHSA-jq35-7prp-9v3f"
+          ],
+          "PkgName": "pyjwt",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pyjwt@2.10.1",
+            "UID": "5cd68cc6a32ec6bd"
+          },
+          "InstalledVersion": "2.10.1",
+          "FixedVersion": "2.13.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-48523",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:e63210007d54f2d94ea7fec417889ad9e4e3acb7c06b79cc43e55674c6c9f332",
+          "Title": "python-pyjwt: PyJWT: Verifier-side algorithm bypass leads to unauthorized information access",
+          "Description": "PyJWT is a JSON Web Token implementation in Python. From 2.9.0 to 2.12.1, there is a verifier-side algorithm allow-list bypass when jwt.decode() or jwt.decode_complete() are called with a PyJWK key. The token header alg is checked against the caller-supplied algorithms allow-list, but signature verification is performed with the algorithm bound to the PyJWK object instead of the header algorithm. An attacker who controls a registered JWK/JWKS private key can sign with a disallowed algorithm, advertise an allowed algorithm in the JWT header, and still be accepted. The issue affects the documented PyJWKClient.get_signing_key_from_jwt(...) flow. This vulnerability is fixed in 2.13.0.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-347"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 5.4
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 5.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-48523",
+            "https://github.com/jpadilla/pyjwt",
+            "https://github.com/jpadilla/pyjwt/security/advisories/GHSA-jq35-7prp-9v3f",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pyjwt/PYSEC-2026-176.yaml",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-48523",
+            "https://www.cve.org/CVERecord?id=CVE-2026-48523"
+          ],
+          "PublishedDate": "2026-05-28T16:16:29.28Z",
+          "LastModifiedDate": "2026-06-17T10:55:03.693Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-48525",
+          "VendorIDs": [
+            "GHSA-w7vc-732c-9m39"
+          ],
+          "PkgName": "pyjwt",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pyjwt@2.10.1",
+            "UID": "5cd68cc6a32ec6bd"
+          },
+          "InstalledVersion": "2.10.1",
+          "FixedVersion": "2.13.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-48525",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:8a0a02460ed24f30cd019095542ea0da129058977c2135f1b2d19b57c592f49e",
+          "Title": "python-pyjwt: PyJWT: Denial of Service via processing of crafted detached JWS tokens",
+          "Description": "PyJWT is a JSON Web Token implementation in Python. From 2.8.0 to 2.12.1, when verifying detached JWS tokens using the unencoded-payload option (\"b64\": false, RFC 7797), PyJWT performs Base64URL decoding of the compact-serialization payload segment before enforcing the detached-payload rules. For b64=false, PyJWT later discards that decoded payload and replaces it with the caller-provided detached_payload. In practice, this turns the middle segment into an attacker-controlled “work amplifier”: a remote client can supply an arbitrarily large Base64URL payload segment that forces CPU work + memory allocations even if the signature is invalid. This creates an unauthenticated DoS vector against any endpoint that verifies detached JWS using PyJWT. This vulnerability is fixed in 2.13.0.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-48525",
+            "https://github.com/jpadilla/pyjwt",
+            "https://github.com/jpadilla/pyjwt/security/advisories/GHSA-w7vc-732c-9m39",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/pyjwt/PYSEC-2026-178.yaml",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-48525",
+            "https://www.cve.org/CVERecord?id=CVE-2026-48525"
+          ],
+          "PublishedDate": "2026-05-28T16:16:29.533Z",
+          "LastModifiedDate": "2026-06-17T10:55:04.01Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-71176",
+          "VendorIDs": [
+            "GHSA-6w46-j5rx-g56g"
+          ],
+          "PkgName": "pytest",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pytest@9.0.2",
+            "UID": "39d1cb0a4fd80af7"
+          },
+          "InstalledVersion": "9.0.2",
+          "FixedVersion": "9.0.3",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-71176",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:d779898baaa383f350086a3ee7a050cd1cfa238e6915969f71d41a556694902e",
+          "Title": "pytest: pytest: Denial of Service or Privilege Escalation via insecure temporary directory handling",
+          "Description": "pytest through 9.0.2 on UNIX relies on directories with the /tmp/pytest-of-{user} name pattern, which allows local users to cause a denial of service or possibly gain privileges.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-379"
+          ],
+          "VendorSeverity": {
+            "amazon": 2,
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L",
+              "V3Score": 6.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L",
+              "V3Score": 6.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-71176",
+            "https://github.com/pytest-dev/pytes",
+            "https://github.com/pytest-dev/pytest/commit/95d8423bd24992deea5b9df32555fa1741679e2c",
+            "https://github.com/pytest-dev/pytest/issues/13669",
+            "https://github.com/pytest-dev/pytest/pull/14343",
+            "https://github.com/pytest-dev/pytest/releases/tag/9.0.3",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-71176",
+            "https://www.cve.org/CVERecord?id=CVE-2025-71176",
+            "https://www.openwall.com/lists/oss-security/2026/01/21/5"
+          ],
+          "PublishedDate": "2026-01-22T05:16:17.577Z",
+          "LastModifiedDate": "2026-06-17T10:03:47.83Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-48818",
+          "VendorIDs": [
+            "GHSA-wqp7-x3pw-xc5r"
+          ],
+          "PkgName": "starlette",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/starlette@0.50.0",
+            "UID": "7031ffd146ce68d8"
+          },
+          "InstalledVersion": "0.50.0",
+          "FixedVersion": "1.1.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-48818",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:384d4253b9d9bc2a7ff6e120ce578ccb6afbd712af5ba7eff6098fbaa93be19c",
+          "Title": "starlette: Starlette: SSRF and NTLM credential theft via UNC paths in StaticFiles on Windows",
+          "Description": "Starlette is a lightweight ASGI framework/toolkit. In versions 1.0.1 and earlier, StaticFiles on Windows is vulnerable to SSRF. An UNC path such as \\\\attacker.com\\share can cause os.path.realpath to initiate an outbound SMB connection before the path is rejected, exposing the service account’s NTLMv2 credentials for offline cracking or relay even though the HTTP response is only a 404. The issue affects default follow_symlink=False deployments, including frameworks built on Starlette such as FastAPI; POSIX systems and follow_symlink=True are unaffected. The issue is fixed in 1.1.0.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-918"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:30087",
+            "https://access.redhat.com/errata/RHSA-2026:30088",
+            "https://access.redhat.com/errata/RHSA-2026:30089",
+            "https://access.redhat.com/security/cve/CVE-2026-48818",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2490020",
+            "https://github.com/Kludex/starlette",
+            "https://github.com/Kludex/starlette/commit/fd53168a7767b6b55ba5af787fd88f49e33cabc5",
+            "https://github.com/Kludex/starlette/pull/3287",
+            "https://github.com/Kludex/starlette/releases/tag/1.1.0",
+            "https://github.com/Kludex/starlette/security/advisories/GHSA-wqp7-x3pw-xc5r",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-48818",
+            "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-48818.json",
+            "https://www.cve.org/CVERecord?id=CVE-2026-48818"
+          ],
+          "PublishedDate": "2026-06-17T19:18:09.807Z",
+          "LastModifiedDate": "2026-06-30T03:20:27.513Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-54283",
+          "VendorIDs": [
+            "GHSA-82w8-qh3p-5jfq"
+          ],
+          "PkgName": "starlette",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/starlette@0.50.0",
+            "UID": "7031ffd146ce68d8"
+          },
+          "InstalledVersion": "0.50.0",
+          "FixedVersion": "1.3.1",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-54283",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:e5fe5b73248a7f922c5ee913d7744e67258d37164c4393d8cee93bf74e68e52e",
+          "Title": "starlette: Starlette: request.form() limits silently ignored for application/x-www-form-urlencoded enable DoS",
+          "Description": "Starlette is a lightweight ASGI framework/toolkit. From 0.4.1 until 1.3.1, request.form() accepts max_fields and max_part_size to bound resource consumption while parsing form data. These limits are enforced for multipart/form-data, but silently ignored for application/x-www-form-urlencoded. An unauthenticated attacker can therefore send a urlencoded body with an arbitrarily large number of fields or an arbitrarily large field, even when the application configured limits it believed would apply. This vulnerability is fixed in 1.3.1.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-54283",
+            "https://github.com/Kludex/starlette",
+            "https://github.com/Kludex/starlette/security/advisories/GHSA-82w8-qh3p-5jfq",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-54283",
+            "https://www.cve.org/CVERecord?id=CVE-2026-54283"
+          ],
+          "PublishedDate": "2026-06-22T18:16:46.943Z",
+          "LastModifiedDate": "2026-06-26T19:16:55.75Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-48710",
+          "VendorIDs": [
+            "GHSA-86qp-5c8j-p5mr"
+          ],
+          "PkgName": "starlette",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/starlette@0.50.0",
+            "UID": "7031ffd146ce68d8"
+          },
+          "InstalledVersion": "0.50.0",
+          "FixedVersion": "1.0.1",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-48710",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:cd82c5865b71f8a6774bcd8e0ac41111915c723a276faffacab97f54957c997c",
+          "Title": "starlette: Starlette: Security restriction bypass via malformed HTTP Host header",
+          "Description": "Starlette is a lightweight ASGI framework/toolkit. Prior to version 1.0.1, the HTTP `Host` request header was not validated before being used to reconstruct `request.url`. Because the routing algorithm relies on the raw HTTP path while `request.url` is rebuilt from the `Host` header, a malformed header could make `request.url.path` differ from the path that was actually requested. Middleware and endpoints that apply security restrictions based on `request.url` (rather than the raw `scope` path) could therefore be bypassed. Users should upgrade to a version greater than or equal to version 1.0.1, which validates the `Host` header against the grammar of RFC 9112 §3.2 / RFC 3986 §3.2.2 when constructing `request.url` and falls back to `scope[\"server\"]` for malformed values.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-444",
+            "CWE-1289"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "nvd": 2,
+            "redhat": 4
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:22992",
+            "https://access.redhat.com/errata/RHSA-2026:22993",
+            "https://access.redhat.com/errata/RHSA-2026:23346",
+            "https://access.redhat.com/errata/RHSA-2026:24866",
+            "https://access.redhat.com/errata/RHSA-2026:26226",
+            "https://access.redhat.com/errata/RHSA-2026:30088",
+            "https://access.redhat.com/errata/RHSA-2026:30089",
+            "https://access.redhat.com/errata/RHSA-2026:34456",
+            "https://access.redhat.com/errata/RHSA-2026:34526",
+            "https://access.redhat.com/errata/RHSA-2026:34532",
+            "https://access.redhat.com/security/cve/CVE-2026-48710",
+            "https://badhost.org",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2481742",
+            "https://github.com/Kludex/starlette",
+            "https://github.com/Kludex/starlette/commit/764dab0dcfb9033d75442d7a359645c9f94648c6",
+            "https://github.com/Kludex/starlette/security/advisories/GHSA-86qp-5c8j-p5mr",
+            "https://github.com/pypa/advisory-database/tree/main/vulns/starlette/PYSEC-2026-161.yaml",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-48710",
+            "https://ostif.org/disclosing-the-badhost-vulnerability-in-starlette",
+            "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-48710.json",
+            "https://www.cve.org/CVERecord?id=CVE-2026-48710",
+            "https://www.secwest.net/starlette",
+            "https://www.x41-dsec.de/lab/advisories/x41-2026-002-starlette"
+          ],
+          "PublishedDate": "2026-05-26T22:16:44.02Z",
+          "LastModifiedDate": "2026-07-02T12:17:29.403Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-48817",
+          "VendorIDs": [
+            "GHSA-x746-7m8f-x49c"
+          ],
+          "PkgName": "starlette",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/starlette@0.50.0",
+            "UID": "7031ffd146ce68d8"
+          },
+          "InstalledVersion": "0.50.0",
+          "FixedVersion": "1.1.0",
+          "Status": "fixed",
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-48817",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Fingerprint": "sha256:872acc7555691a0ba557949aada0c56ad9b4faa33e72610827d7ef845c663b28",
+          "Title": "starlette: Starlette: Information disclosure and unintended method execution via non-standard HTTP methods",
+          "Description": "Starlette is a lightweight ASGI framework/toolkit. In versions 1.0.1 and below, when dispatching a request, HTTPEndpoint selects the handler by lowercasing the HTTP method and looking it up as an attribute with getattr, without restricting the lookup to a known set of HTTP verbs. When an HTTPEndpoint subclass is registered through Route(...) without an explicit methods= argument, the route does not constrain the method and every method reaches the endpoint. If a non-standard HTTP method whose lowercased name matches an attribute on the endpoint subclass reaches the endpoint, that attribute is invoked as if it were a request handler. An attacker can use this to reach methods that were never meant to be HTTP handlers, such as internal helpers, without the authorization checks applied by the intended public handler. An application (including Starlette-based frameworks like FastAPI) is affected if it registers an HTTPEndpoint subclass via Route(...) without explicitly setting methods=, and that subclass includes extra methods named like non-standard HTTP verbs that take one request argument and return a response. This issue has been fixed in version 1.1.0.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-470"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-48817",
+            "https://github.com/Kludex/starlette",
+            "https://github.com/Kludex/starlette/releases/tag/1.1.0",
+            "https://github.com/Kludex/starlette/security/advisories/GHSA-x746-7m8f-x49c",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-48817",
+            "https://www.cve.org/CVERecord?id=CVE-2026-48817"
+          ],
+          "PublishedDate": "2026-06-17T20:17:22.427Z",
+          "LastModifiedDate": "2026-06-26T19:18:13.38Z"
+        }
+      ]
+    }
+  ]
+}
