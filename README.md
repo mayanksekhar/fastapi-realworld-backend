@@ -51,7 +51,7 @@ python:3.12-slim (108 OS CVEs) -> distroless (29, unfixable) -> Chainguard Wolfi
 The published image is signed and carries an attested SBOM. Verify with no key:
 
 ```bash
-cosign verify ghcr.io/mayanksekhar/fastapi-realworld-devsecops:<sha> \
+cosign verify ghcr.io/mayanksekhar/fastapi-realworld-devsecops:46287445884f0a77cb98026b68ab0e0c577b3a9c \
   --certificate-identity-regexp="https://github.com/mayanksekhar" \
   --certificate-oidc-issuer="https://token.actions.githubusercontent.com"
 ```
