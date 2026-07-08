@@ -1,139 +1,80 @@
-# ![RealWorld Example App](.github/assets/logo.png)
+# FastAPI RealWorld - DevSecOps
 
+A demonstration of applying a full DevSecOps pipeline and container hardening to
+a real, unsecured open-source application - and proving the pipeline works by
+having it find and gate on real vulnerabilities.
 
-> ### Python / FastAPI codebase containing real world examples (CRUD, auth, middlewares advanced patterns, etc.) that adheres to the [RealWorld](https://github.com/gothinkster/realworld) spec and API.
+Forked from [`borys25ol/fastapi-realworld-backend`](https://github.com/borys25ol/fastapi-realworld-backend),
+an implementation of the [RealWorld](https://github.com/gothinkster/realworld)
+spec (a Medium clone: JWT auth, articles, comments, profiles, follows, on
+PostgreSQL). The upstream app had no security tooling. This fork adds one.
 
+## The Result
 
-### [Demo](https://demo.realworld.io/)&nbsp;&nbsp;&nbsp;&nbsp;[RealWorld](https://github.com/gothinkster/realworld)
+| | Before | After |
+|-|--------|-------|
+| Blocking CVEs | **122** | **0** |
+| OS-layer CVEs | 108 (2 CRITICAL) | 0 |
+| Dependency CVEs | 14 (4 HIGH) | 0 |
+| Image signed | No | Yes (Cosign keyless) |
+| SBOM | None | CycloneDX, attested |
 
+This is not a greenfield demo on clean code. It is a documented remediation of
+122 findings on an app that shipped with zero security scanning.
 
-This codebase was created to demonstrate a fully fledged backend application built with **[FastAPI](https://fastapi.tiangolo.com/)** including CRUD operations, authentication, routing, and more.
+## The Pipeline
 
-For more information on how this works with other frontends/backends, head over to the [RealWorld](https://github.com/gothinkster/realworld) repo.
+Five gates run on every push and pull request. Each blocks promotion on findings
+at or above its threshold.
+secret-scan  ->  sast  ->  sca  ->  build + image-scan  ->  sign + attest
+Gitleaks       Bandit     Grype      Trivy (CRITICAL)      Cosign + Syft
+Semgrep     Trivy fs
 
+| Stage | Tools | Gate |
+|-------|-------|------|
+| Secret scanning | Gitleaks | Any committed secret |
+| SAST | Bandit, Semgrep | Blocking findings |
+| SCA | Grype, Trivy fs | HIGH / CRITICAL dependency CVEs |
+| Image scan | Trivy | CRITICAL image CVEs |
+| Sign + attest | Cosign, Syft | Keyless signature + CycloneDX SBOM |
 
-## Description
-This project is a Python-based API that uses PostgreSQL as its database.
-It is built with FastAPI, a modern, fast (high-performance), web framework for building APIs with Python 3 based on standard Python type hints.
+## Container Hardening
 
-## Package layout
-- `conduit/api`: HTTP layer (routes, schemas, middlewares)
-- `conduit/services`: application services/use-cases
-- `conduit/interfaces`: interfaces/abstractions (repositories, service contracts)
-- `conduit/dtos`: DTOs used across layers
-  - `conduit/dtos/domain`: business-level DTOs used by services and API schemas
-  - `conduit/dtos/records`: persistence DTOs returned by repositories
-- `conduit/infrastructure`: SQLAlchemy models, repositories, migrations
-- `conduit/core`: config, logging, security, shared utilities
+The runtime image uses [Chainguard's Wolfi-based Python image](https://images.chainguard.dev/directory/image/python/overview),
+which ships at zero CVEs, runs as nonroot, and has no shell. The path there is
+documented in [ADR-001](docs/adr/ADR-001-hardened-base-image.md):
 
-## Prerequisites
-- Python 3.12
-- FastAPI
-- PostgreSQL
-- Pytest
-- Docker
+python:3.12-slim (108 OS CVEs) -> distroless (29, unfixable) -> Chainguard Wolfi (0)
 
-## Installation
+## Verify the Supply Chain
 
-Create a virtual environment:
+The published image is signed and carries an attested SBOM. Verify with no key:
 
-```sh
-make ve
+```bash
+cosign verify ghcr.io/mayanksekhar/fastapi-realworld-devsecops:<sha> \
+  --certificate-identity-regexp="https://github.com/mayanksekhar" \
+  --certificate-oidc-issuer="https://token.actions.githubusercontent.com"
 ```
 
-Install dependencies:
+## Documentation
 
-```sh
-pip install -r requirements.txt
-```
+| Document | What it covers |
+|----------|----------------|
+| [AUDIT-REPORT.md](docs/findings/AUDIT-REPORT.md) | Baseline scan - the 122 CVEs found before any pipeline |
+| [AFTER-REPORT.md](docs/findings/AFTER-REPORT.md) | Remediation - how each gate was made to pass |
+| [THREAT_MODEL.md](docs/THREAT_MODEL.md) | STRIDE analysis of the Conduit API |
+| [ADR-001](docs/adr/ADR-001-hardened-base-image.md) | Base image decision record |
 
-Configuration
---------------
+## Roadmap
 
-Replace `.env.example` with real `.env`, changing placeholders
+- [x] DevSecOps pipeline (secret, SAST, SCA, image scan, sign, attest)
+- [x] Container hardening to zero CVEs
+- [x] Threat model (STRIDE)
+- [ ] EKS deployment with hardened image
+- [ ] Kyverno admission policies (pod security enforcement)
+- [ ] Falco runtime detection
 
-```
-SECRET_KEY=your_secret_key
-POSTGRES_USER=your_postgres_user
-POSTGRES_PASSWORD=your_postgres_password
-POSTGRES_DB=your_postgres_db
-POSTGRES_HOST=your_postgres_host
-POSTGRES_PORT=your_postgres_port
-JWT_SECRET_KEY=your_jwt_secret_key
-```
+## Credits
 
-Run with Docker
---------------
-You must have ``docker`` and ``docker-compose`` installed on your machine to start this application.
-
-Setup PostgreSQL database with docker-compose:
-
-```sh
-make docker_build_postgres
-```
-
-Run the migrations:
-
-```sh
-make migrate
-```
-
-Run the application server:
-
-```sh
-make runserver
-```
-
-Also, you can run the fully Dockerized application with `docker-compose`:
-
-```sh
-make docker_build
-```
-
-And after that run migrations:
-
-```sh
-docker exec -it conduit-api alembic upgrade head
-```
-
-Run tests
----------
-
-Tests for this project are defined in the ``tests/`` folder.
-
-For running tests, you can have to create separate `.env.test` file the same as `.env` file, but with different database name.:
-
-```
-POSTGRES_DB=conduit_test
-```
-
-Then run the tests:
-
-```sh
-make test
-```
-
-Or run the tests with coverage:
-
-```sh
-make test-cov
-```
-
-Run Conduit Postman collection tests
----------
-
-For running tests for local application:
-
-```sh
-APIURL=http://127.0.0.1:8000/api ./postman/run-api-tests.sh
-```
-
-For running tests for fully Dockerized application:
-
-```sh
-APIURL=http://127.0.0.1:8080/api ./postman/run-api-tests.sh
-```
-
-Web routes
------------
-    All routes are available on / or /redoc paths with Swagger or ReDoc.
+Application code: [`borys25ol/fastapi-realworld-backend`](https://github.com/borys25ol/fastapi-realworld-backend).
+DevSecOps pipeline, hardening, and security documentation: Mayank Sekhar / Thinkwerke.
